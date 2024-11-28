@@ -2,14 +2,14 @@
 
 namespace App\Providers;
 
+use App\Repositories\BookingRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\Contracts\BookingRepositoryInterface;
 use App\Repositories\Contracts\CategoryRepositoryInterface;
 use App\Repositories\Contracts\SellerRepositoryInterface;
 use App\Repositories\Contracts\TicketRepositoryInterface;
 use App\Repositories\TicketRepository;
-use App\Resources\BookingRepository;
-use App\Resources\SellerRepository;
+use App\Repositories\SellerRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

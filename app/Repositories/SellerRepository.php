@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Resources;
+namespace App\Repositories;
 
 use App\Models\Category;
 use App\Models\Seller;
