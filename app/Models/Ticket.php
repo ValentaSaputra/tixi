@@ -26,6 +26,13 @@ class Ticket extends Model
         'category_id',
         'seller_id',
         'slug',
+        'rating',
+    ];
+
+    protected $casts = [
+        'is_popular' => 'boolean',
+        'rating' => 'float',
+        'price' => 'float',
     ];
 
     public function setNameAttribute($value)

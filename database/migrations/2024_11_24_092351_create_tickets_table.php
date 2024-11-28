@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('about');
             $table->time('open_time_at');
             $table->time('closed_time_at');
+            $table->decimal('rating', 2, 1)->nullable(); 
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('seller_id')->constrained()->cascadeOnDelete();
             $table->softDeletes(); //data akan di hapus agar tidak muncul di interface tetapi data masih tetap ada di database
