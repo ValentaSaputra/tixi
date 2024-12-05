@@ -27,7 +27,7 @@
 
                         @forelse ($popularTickets as $itemPopularTicket)
                         <div class="swiper-slide !w-fit">
-                            <a href="details.html" class="card">
+                            <a href="{{route('front.details', $itemPopularTicket->slug)}}" class="card">
                                 <div class="relative flex items-end w-[345px] h-[220px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
                                     <img src="{{Storage::url($itemPopularTicket->thumbnail)}}" class="absolute w-full h-full object-cover" alt="thumbnail">
                                     <div class="flex items-center justify-between w-full h-fit rounded-[17px] border border-white/40 p-[8px_10px] mx-4 mb-4 bg-[#94959966] backdrop-blur-sm">
@@ -111,7 +111,7 @@
                 <div class="flex flex-col gap-3">
 
                     @forelse ($newTickets as $itemNewTicket)
-                    <a href="details.html" class="card">
+                    <a href="{{route('front.details', $itemNewTicket->slug)}}" class="card">
                         <div class="flex items-center justify-between rounded-3xl p-[6px] pr-[14px] bg-white overflow-hidden">
                             <div class="flex items-center gap-[14px]">
                                 <div class="flex w-[90px] h-[90px] shrink-0 rounded-3xl bg-[#D9D9D9] overflow-hidden">
