@@ -33,6 +33,10 @@ class CategoryResource extends Resource
                 Forms\Components\FileUpload::make('icon')
                 ->image()
                 ->required(),
+
+                Forms\Components\FileUpload::make('icon_white')
+                ->image()
+                ->required(),
             ]);
     }
 

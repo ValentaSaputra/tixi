@@ -63,7 +63,7 @@
 
                         @forelse ($categories as $itemCategory)
                         <div class="swiper-slide !w-fit">
-                            <a href="category.html" class="card">
+                            <a href="{{route('front.category', $itemCategory->slug)}}" class="card">
                                 <div class="flex items-center w-fit rounded-full text-nowrap p-[14px_20px] gap-[10px] bg-[#F8F8F9]">
                                     <img src="{{Storage::url($itemCategory->icon)}}" class="w-6 h-6" alt="icon">
                                     <p class="font-bold text-sm leading-[21px]">
