@@ -20,8 +20,8 @@ class BookingController extends Controller
     }
 
     public function booking(Ticket $ticket){
-        dd($ticket);
-        // return view('front.booking', compact('ticket'));
+        // dd($ticket);
+        return view('front.booking', compact('ticket'));
     }
 
     public function bookingStore(Ticket $ticket, StoreBookingRequest $request)
@@ -38,6 +38,7 @@ class BookingController extends Controller
     public function payment()
     {
         $data = $this->bookingService->payment();
+        dd($data);
         return view('front.payment', $data);
     }
 
@@ -47,12 +48,14 @@ class BookingController extends Controller
         $bookingTransactionId = $this->bookingService->paymentStore($validated);
 
         if($bookingTransactionId) {
-            return redirect()->route('front.index')->withErrors(['error' => 'Payment failed. Please Try again.']);
+            return redirect()->route('front.booking_finished', $bookingTransactionId);
         }
+
+        return redirect()->route('front.index')->withErrors(['error' => 'Payment failed. Please try again.']);
     }
 
     public function bookingFinished(BookingTransaction $bookingTransaction){
-        return view('front.booking_finished', compact('bookingTranscation'));
+        return view('front.booking_finished', compact('bookingTransaction'));
     }
 
 }

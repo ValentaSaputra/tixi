@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookingTransaction;
 use App\Models\Category;
 use App\Models\Ticket;
 use App\Services\FrontService;
