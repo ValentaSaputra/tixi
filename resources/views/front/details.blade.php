@@ -150,7 +150,7 @@
         <nav id="Bottom-Nav-Book" class="fixed bottom-0 flex items-center justify-between w-full max-w-[640px] bg-white p-4 z-30">
             <div>
                 <p class="font-bold text-[22px] leading-[26px]">
-                    Rp. {{number_format($ticket->price, 0, '.', ',')}} 
+                    Rp. {{number_format($ticket->price, 0, ',', '.')}} 
                 </p>
                 <p class="text-sm leading-[26px] text-[#70758F]">/person</p>
             </div>

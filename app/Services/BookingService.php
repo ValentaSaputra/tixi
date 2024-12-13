@@ -19,6 +19,12 @@ class BookingService {
         $this->bookingRepository = $bookingRepository;
     }
 
+    public function getBookingDetails(array $validated)
+    {
+        return $this->bookingRepository->findByTrxIdAndPhoneNumber($validated['booking_trx_id'],
+        $validated['phone_number']);
+    }
+
     public function calculateTotals($ticketId, $totalParticipant)
     {
         $ppn = 0.11;

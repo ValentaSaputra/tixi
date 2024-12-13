@@ -15,7 +15,7 @@
         </div>
         <div id="Top-Nav-Fixed" class="relative flex items-center justify-between w-full max-w-[640px] px-4 mt-[60px] z-20">
             <div class="fixed flex items-center justify-between w-full max-w-[640px] -ml-4 px-4 mx-auto">
-                <a href="details.html">
+                <a href="{{route('front.details', $ticket->slug)}}">
                     <img src="{{asset('assets/images/icons/back.svg')}}" class="w-12 h-12" alt="icon">
                 </a>
                 <a href="#">
