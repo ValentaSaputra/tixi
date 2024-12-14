@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BookingTransactionResource\Pages;
 use App\Filament\Resources\BookingTransactionResource\RelationManagers;
+use App\Jobs\SendBookingApprovedEmail;
 use App\Models\BookingTransaction;
 use App\Models\Ticket;
 use Filament\Forms;
@@ -155,6 +156,8 @@ class BookingTransactionResource extends Resource
                     ->action(function (BookingTransaction $record) {
                         $record->is_paid = true;
                         $record->save();
+
+                        SendBookingApprovedEmail::dispatch($record);
 
                         //Trigger the custom notification
                         Notification::make()
