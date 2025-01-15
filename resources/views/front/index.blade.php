@@ -11,13 +11,24 @@
 </head>
 <body>
     <div class="relative flex flex-col w-full min-h-screen max-w-[640px] mx-auto bg-white">
-        <div id="Top-Nav"  class="flex items-center justify-between w-full px-4 mt-[60px]">
+        
+        <div id="Top-Nav" class="flex items-center justify-between w-full px-4 mt-[60px]">
             <a href="{{route('front.index')}}">
                 <img src="{{asset('assets/images/logos/logo.svg')}}" class="flex shrink-0" alt="logo">
             </a>
-            <a href="#">
-                <img src="{{asset('assets/images/icons/heart-fill.svg')}}" class="w-12 h-12" alt="icon">
-            </a>
+            
+            <div class="flex items-center gap-4"> <!-- Tambahkan div wrapper dengan flex -->
+                @if(Auth::check())
+                <b>Welcome, {{ Auth::user()->name }}</b>
+                @endif
+        
+                <form action="{{ route('logout')}}" method="post">
+                    @csrf
+                    <button>
+                        <img src="{{asset('assets/images/icons/logout.svg')}}" class="w-12 h-12" alt="icon">
+                    </button>
+                </form>
+            </div>
         </div>
         <main class="flex flex-col w-full gap-5 mt-5 overflow-x-hidden">
             <section id="Popular" class="flex flex-col gap-3">
