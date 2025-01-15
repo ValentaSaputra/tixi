@@ -36,7 +36,7 @@ class TicketResource extends Resource
                     ->required()
                     ->maxLength(255),
     
-                    Forms\Components\TextArea::make('address')
+                    Forms\Components\Textarea::make('address')
                     ->rows(3)
                     ->required()
                     ->maxLength(255),
