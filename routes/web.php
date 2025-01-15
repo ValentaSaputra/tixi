@@ -5,8 +5,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-
-
+use App\Http\Controllers\TicketController;
 
 Route::get('/explore/{seller:slug}', [FrontController::class, 'explore'])->name('front.seller');
 
@@ -25,12 +24,22 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/booking/{ticket:slug}', [BookingController::class, 'booking'])->name('front.booking');
     Route::post('/booking/{ticket:slug}', [BookingController::class, 'bookingStore'])->name('front.booking_store');
+
+    
+    Route::get('/booking/finished/{bookingTransaction}', [BookingController::class, 'bookingFinished'])->name('front.booking_finished');
 });
 
-Route::get('/booking/finished/{bookingTransaction}', [BookingController::class, 'bookingFinished'])->name('front.booking_finished');
 
+//postman
 Route::get('/categories', [CategoryController::class, 'index']);
-Route::get('/api/check-booking', [BookingController::class, 'checkBookingApi']);
+Route::get('/tickets', [TicketController::class, 'index']);
+Route::get('/tickets/{id}', [TicketController::class, 'show']);
+
+
+
+// Route::get('check-booking', [BookingController::class, 'checkBookingApi']);
+// Route::post('check-booking', [BookingController::class, 'checkBookingApi']);
+
 
 //register login
 Route::get('/registerasi', [AuthController::class, 'tampilRegisterasi'])->name('registerasi.tampil');
