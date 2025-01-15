@@ -3,6 +3,8 @@
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
 
@@ -22,3 +24,6 @@ Route::get('/booking/{ticket:slug}', [BookingController::class, 'booking'])->nam
 Route::post('/booking/{ticket:slug}', [BookingController::class, 'bookingStore'])->name('front.booking_store');
 
 Route::get('/booking/finished/{bookingTransaction}', [BookingController::class, 'bookingFinished'])->name('front.booking_finished');
+
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/api/check-booking', [BookingController::class, 'checkBookingApi']);

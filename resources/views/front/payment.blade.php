@@ -62,7 +62,7 @@
                     </p>
                 </div>
                 <div class="flex items-center justify-between">
-                    <p class="font-semibold text-sm leading-[21px]">Wajib Pajak 11%</p>
+                    <p class="font-semibold text-sm leading-[21px]">Tax admin 11%</p>
                     <p class="font-semibold text-sm leading-[21px]">
                         Rp. {{number_format($booking['total_ppn'], 0, ',', '.')}} 
                     </p>
