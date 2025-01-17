@@ -18,8 +18,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/categories', [CategoryController::class, 'index']);
     Route::get('/tickets', [TicketController::class, 'index']);
     Route::get('/tickets/{id}', [TicketController::class, 'show']);
-    Route::post('/checkBooking', [BookingController::class, 'checkBooking']);
-    
+
+    Route::middleware(['throttle:3,1'])->group(function () {
+        Route::post('/checkBooking', [BookingController::class, 'checkBooking']);
+    });
 });
 
 
