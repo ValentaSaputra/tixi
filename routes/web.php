@@ -42,10 +42,9 @@ Route::get('/tickets/{id}', [TicketController::class, 'show']);
 
 
 //register login
-Route::get('/registerasi', [AuthController::class, 'tampilRegisterasi'])->name('registerasi.tampil');
-Route::post('/registerasi/submit', [AuthController::class, 'submitRegisterasi'])->name('registerasi.submit');
+Route::get('/registerasi', [AuthController::class, 'tampilRegisterasi'])->name('registerasi');
+Route::post('/registerasi', [AuthController::class, 'submitRegisterasi']);
 
 Route::get('/login', [AuthController::class, 'tampilLogin'])->name('login');
-Route::post('/login/submit', [AuthController::class, 'submitLogin'])->name('login.submit');
-
+Route::post('/login', [AuthController::class, 'submitLogin']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

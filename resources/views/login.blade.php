@@ -10,7 +10,7 @@
 <body>
     <div class="relative flex flex-col w-full min-h-screen max-w-[640px] mx-auto bg-[#F8F8F9]"> 
         <div class="flex flex-col items-center justify-center min-h-screen rounded-[30px] p-5 gap-[14px] bg-white">
-            <form action="{{ route('login.submit')}}" method="post" class="w-full max-w-md">
+            <form action="{{ route('login')}}" method="post" class="w-full max-w-md">
                 @csrf
                 <div class="flex flex-col mt-6">
                     <label for="email" class="text-sm leading-[21px]">Email</label>
@@ -27,7 +27,7 @@
                 <button class="bg-[#F97316] text-white py-2 px-4 rounded-lg w-full mt-4">Login</button>
             </form>
             
-            <a href="{{ route('registerasi.tampil') }}" >
+            <a href="{{ route('registerasi') }}" >
                 <button class=" py-2 px-4 rounded-lg w-full mt-4">Register</button>
             </a>
             

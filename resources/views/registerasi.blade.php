@@ -10,7 +10,7 @@
 <body>
     <div class="relative flex flex-col w-full min-h-screen max-w-[640px] mx-auto bg-[#F8F8F9]"> 
         <div class="flex flex-col items-center justify-center min-h-screen rounded-[30px] p-5 gap-[14px] bg-white">
-            <form action="{{ route('registerasi.submit')}}" method="post" class="w-full max-w-md">
+            <form action="{{ route('registerasi')}}" method="post" class="w-full max-w-md">
                 @csrf
                 <div class="flex flex-col mt-6">
                     <label for="name" class="text-sm leading-[21px]">Full Name</label>
