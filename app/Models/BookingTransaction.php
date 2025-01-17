@@ -28,6 +28,8 @@ class BookingTransaction extends Model
         'started_at' => 'date'
     ];
 
+    protected $perPage = 5; // Default jumlah item per halaman
+
     public static function generateUniqueTrxId()
     {
         $prefix = 'TIX';
