@@ -15,7 +15,7 @@ Route::get('/details/{ticket:slug}', [FrontController::class, 'details'])->name(
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('front.index');
-
+    
     Route::get('/check-booking', [BookingController::class, 'checkBooking'])->name('front.check_booking');
     Route::post('/check-booking/details', [BookingController::class, 'checkBookingDetails'])->name('front.check_booking_details');
 
